@@ -44,8 +44,8 @@ class Keyword(JavaToken):
 
 class Modifier(Keyword):
     VALUES = set(['abstract', 'default', 'final', 'native', 'private',
-                  'protected', 'public', 'static', 'strictfp', 'synchronized',
-                  'transient', 'volatile'])
+                   'protected', 'public', 'static', 'strictfp', 'synchronized',
+                   'transient', 'volatile'])
 
 class BasicType(Keyword):
     VALUES = set(['boolean', 'byte', 'char', 'double',
