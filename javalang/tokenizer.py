@@ -558,6 +558,7 @@ class JavaTokenizer(object):
                 self.error('Could not process token', c)
 
             position = (self.current_line, self.i - self.start_of_line)
+            # TODO: fix position
             token = token_type(self.data[self.i:self.j], position, self.javadoc)
             yield token
 

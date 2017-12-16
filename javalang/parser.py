@@ -6,6 +6,7 @@ from .tokenizer import (
     EndOfInput, Keyword, Modifier, BasicType, Identifier,
     Annotation, Literal, Operator, JavaToken,
     )
+from . import ast
 
 ENABLE_DEBUG_SUPPORT = False
 
@@ -66,6 +67,8 @@ def add_position(method):
         start = self.tokens.look().position
         node = method(self)
         if node:
+            if isinstance(node.position, tuple):
+                node._position = ast.Position()
             node.position.start = start
             node.position.end = self.tokens.look().position
 

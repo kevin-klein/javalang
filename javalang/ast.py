@@ -32,7 +32,7 @@ class Node(object):
 
     def __init__(self, **kwargs):
         values = kwargs.copy()
-        self.position = Position()
+        self._position = Position()
         for attr_name in self.attrs:
             value = values.pop(attr_name, None)
             setattr(self, attr_name, value)
@@ -65,7 +65,7 @@ class Node(object):
     @property
     def children(self):
         return [getattr(self, attr_name) for attr_name in self.attrs]
-    
+
     @property
     def position(self):
         if hasattr(self, "_position"):
